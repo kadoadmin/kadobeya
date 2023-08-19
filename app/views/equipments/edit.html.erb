@@ -1,2 +1,14 @@
-<h1>Equipments#edit</h1>
-<p>Find me in app/views/equipments/edit.html.erb</p>
+<h1>設備編集</h1>
+<%= form_with model: @equipment,url:equipment_path(@equipment.id),method: :patch do |f| %>
+ <h4>設備名</h4>
+  <%= f.text_field :name %>
+
+  <h4>画像</h4>
+  <%= f.file_field :image, accept: "image/*" %>
+
+  <h4>詳細</h4>
+  <%= f.text_field :detail %> 
+  <%= f.submit 'Update' %>
+  <%= link_to "Back", equipments_path %>
+
+<% end %>

@@ -10,15 +10,24 @@ class EquipmentsController < ApplicationController
   end
 
   def index
+    @equipments = Equipment.all
+    @equipment = Equipment.new
   end
 
   def edit
+    @equipment = Equipment.find(params[:id])
   end
 
   def update
+    @equipment = Equipment.find(params[:id])
+    @equipment.update(equipment_params)
+    redirect_to equipments_path
   end
 
   def destroy
+    equipment = Equipment.find(params[:id])
+    equipment.destroy
+    redirect_to equipments_path
   end
 
   private

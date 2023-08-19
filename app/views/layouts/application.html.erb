@@ -11,12 +11,23 @@
   </head>
 
   <body>
-  <% if admin_signed_in? %>
-  <p>管理人ページ</p>
-    <li>
-      <%= link_to "ログアウト", destroy_admin_session_path, method: :delete %>
-    </li>
-  <% end %>
-    <%= yield %>
+    <header>
+      <p>KADOBEYA</p>
+    </header>
+    
+    <main>
+      <% if admin_signed_in? %>
+        <p>管理人ページ</p>
+        <li>
+          <%= link_to "ログアウト", destroy_admin_session_path, method: :delete %>
+        </li>
+      <% end %>
+    
+      <%= yield %>
+    </main>
+    
+    <footer>
+      <p>©Kadobeya</p>
+    </footer>
   </body>
 </html>
