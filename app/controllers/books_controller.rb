@@ -10,7 +10,7 @@ class BooksController < ApplicationController
   end
 
   def index
-    @books = Book.all
+    @books = Book.all.order(:number)
     @book = Book.new
   end
 
