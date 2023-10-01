@@ -1,0 +1,27 @@
+<% if @urabeya.errors.any? %>
+  <%= @urabeya.errors.count %> error prohibited this obj from being saved:
+  <ul>
+    <% @urabeya.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= form_with model: @urabeya, url: urabeyas_path do |f| %>
+  <h4>授業名</h4>
+  <%= f.text_field :title %>
+
+  <h4>先生</h4>
+  <%= f.text_field :teacher %>
+
+  <h4>講義動画</h4>
+  <%= f.text_field :class_name %>
+  
+  <h4>URL</h4>
+  <%= f.text_field :class_url %>
+  
+  <h4>整理番号</h4>
+  <%= f.text_field :number %>
+  
+  <%= f.submit '投稿' %>
+<% end %>

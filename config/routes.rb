@@ -9,5 +9,6 @@ Rails.application.routes.draw do
   resources :equipments, only: [:index, :create, :edit, :update, :destroy, :new]
   resources :books, only: [:index, :create, :edit, :update, :destroy, :new]
   resources :rules, only: [:index, :create, :edit, :update, :destroy, :new]
+  resources :urabeyas, only: [:index, :create, :edit, :update, :destroy, :new]
 
 end
