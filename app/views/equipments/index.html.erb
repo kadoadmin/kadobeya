@@ -1,14 +1,26 @@
-<h1>設備</h1>
-　　<% @equipments.each do |equipment| %>
-        <%= image_tag equipment.get_image(50,50) %>
-        <%= equipment.name %>
-        <%= equipment.detail %>
+<div class="container pt-4">
+  <h1>設備</h1>
+  <p>角部屋には便利なものがたくさんあります。ぜひ使いこなしてくださいね。利用時のルールについては<%= link_to "こちら", rules_path %>をご覧ください。</p>
+  <div class="d-flex flex-wrap">
+    <% @equipments.each do |equipment| %>
+      <div class="m-5">
+          <div>
+          <%= image_tag equipment.get_image(200,200) %>
+          </div>
+          <div><h5><%= equipment.name %></h5></div>
+          <div><%= safe_join(equipment.detail.split("\n"),tag(:br)) %></div>
+        
+
         <% if admin_signed_in? %>
           <%= link_to "削除", equipment_path(equipment.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>
           <%= link_to "編集", edit_equipment_path(equipment.id) %>
         <% end %>
+      </div>  
     <% end %>
+  </div>
 
     <% if admin_signed_in? %>
       <%= link_to "追加", new_equipment_path(@equipment.id) %>
     <% end %>
+
+</div>

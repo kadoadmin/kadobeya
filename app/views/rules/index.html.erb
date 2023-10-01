@@ -1,7 +1,10 @@
-<h1>使い方・ルール</h1>
+<div class="container pt-4">
+  <h1>使い方・ルール</h1>
     <% @rules.each do |rule| %>
-        <%= rule.title %>
-        <%= rule.body %>
+      <div class="m-3">
+        <h4><span style="background: linear-gradient(transparent 60%, #ffccec 0%); padding: 0 10px;"><%= rule.title %></span></h4>
+      </div>
+      <div class="mx-5"><%= safe_join(rule.body.split("\n"),tag(:br)) %></div>
         
         <% if admin_signed_in? %>
             <%= link_to "削除", rule_path(rule.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>
@@ -12,3 +15,4 @@
     <% if admin_signed_in? %>
       <%= link_to "追加", new_rule_path(@rule.id) %>
     <% end %>
+</div>
