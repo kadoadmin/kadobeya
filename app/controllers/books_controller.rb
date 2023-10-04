@@ -1,4 +1,6 @@
 class BooksController < ApplicationController
+  before_action :authenticate_admin!, except: [:index]
+  
   def new
     @book = Book.new
   end

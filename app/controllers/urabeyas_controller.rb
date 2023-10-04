@@ -1,4 +1,6 @@
 class UrabeyasController < ApplicationController
+  before_action :authenticate_admin!, except: [:index]
+
   def new
     @urabeya = Urabeya.new
   end

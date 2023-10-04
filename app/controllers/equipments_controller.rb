@@ -1,4 +1,6 @@
 class EquipmentsController < ApplicationController
+  before_action :authenticate_admin!, except: [:index]
+  
   def new
     @equipment = Equipment.new
   end
