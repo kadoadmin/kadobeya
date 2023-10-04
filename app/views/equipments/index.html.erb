@@ -1,6 +1,9 @@
 <div class="container pt-4">
   <h1>設備</h1>
   <p>角部屋には便利なものがたくさんあります。ぜひ使いこなしてくださいね。利用時のルールについては<%= link_to "こちら", rules_path %>をご覧ください。</p>
+    <% if admin_signed_in? %>
+      <%= link_to "追加", new_equipment_path(@equipment.id) %>
+    <% end %>
   <div class="d-flex flex-wrap">
     <% @equipments.each do |equipment| %>
       <div class="m-5">
@@ -18,9 +21,4 @@
       </div>  
     <% end %>
   </div>
-
-    <% if admin_signed_in? %>
-      <%= link_to "追加", new_equipment_path(@equipment.id) %>
-    <% end %>
-
 </div>

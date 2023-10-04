@@ -26,20 +26,20 @@
   <body>
     <header class="fixed-top">
       <nav class="navbar navbar-light p-3 border-bottom shadow-sm" style="background-color: rgba(250,250,250,1);">
-        <a class="navbar-brand" href="#">kadobeya</a>
+        <a class="navbar-brand" href="#">KADOBEYA</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"　aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ml-auto">
-            <%= link_to "Top", root_path %>
-            <%= link_to "About", about_path %>
-            <%= link_to "設備", equipments_path %>
-            <%= link_to "蔵書", books_path %>
-            <%= link_to "使い方", rules_path %>
-            <%= link_to "裏部屋", urabeyas_path %>
-            <%= link_to "オープンチャット", "https://line.me/ti/g2/JE5Sji28wew-bIpnmtdGXO3iseCwHd95gRuZqA?utm_source=invitation&utm_medium=link_copy&utm_campaign=default", target: :_blank, rel: "noopener noreferrer" %>
+            <%= link_to "Top", root_path, class: "text-dark" %>
+            <%= link_to "About", about_path, class: "text-dark" %>
+            <%= link_to "設備", equipments_path, class: "text-dark"  %>
+            <%= link_to "蔵書", books_path, class: "text-dark"  %>
+            <%= link_to "使い方", rules_path, class: "text-dark"  %>
+            <%= link_to "裏部屋", urabeyas_path, class: "text-dark"  %>
+            <%= link_to "オープンチャット", "https://line.me/ti/g2/JE5Sji28wew-bIpnmtdGXO3iseCwHd95gRuZqA?utm_source=invitation&utm_medium=link_copy&utm_campaign=default", target: :_blank, rel: "noopener noreferrer", class: "text-dark"  %>
             </ul>
         </div>
       </nav>

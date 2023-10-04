@@ -1,33 +1,33 @@
 <div class="container pt-4">
   <h1>裏部屋</h1>
-    <p>先生方から頂いた講義動画です。有効に活用しましょう。</p>
-  <table class="table" style="table-layout:fixed;">
-    <tr style="background-color: rgba(211,211,211,0.5);">
-      <th style="width: 10%;">授業名</th>
-      <th style="width: 10%;">先生</th>
-      <th style="width: 10%;">講義動画</th>
-      <th style="width: 20%;">URL</th>
-      <% if admin_signed_in? %>
-          <th>整理番号</th>
-          <th></th>
-      <% end %>
-    </tr>
-　　<% @urabeyas.each do |urabeya| %>
-　　<tr>
-      <td><%= urabeya.title %></td>
-      <td><%= urabeya.teacher %></td>
-      <td><%= urabeya.class_name %></td>
-      <td style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"><%= Rinku.auto_link(urabeya.class_url, :all, 'target="_blank"').html_safe %></td>
-        
-        <% if admin_signed_in? %>
-          <td><%= urabeya.number %></td>
-            <td><%= link_to "削除", urabeya_path(urabeya.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>
-                <%= link_to "編集", edit_urabeya_path(urabeya.id) %></td>
-        <% end %>
-    </tr>
-    <% end %>
-
+    <p>こちらには先生方から頂いた講義動画を載せています。有効に活用しましょう。</p>
     <% if admin_signed_in? %>
       <%= link_to "追加", new_urabeya_path(@urabeya.id) %>
     <% end %>
+  <div class="mx-5">
+    <% @urabeyas.each do |urabeya| %>
+      <% if urabeya.title.present? %>
+        <div class="row mt-5">
+          <h5><%= urabeya.title %><span class="h6 ml-2 text-nowrap"><%= urabeya.teacher %></span></h5>
+        </div>
+      <% else %>
+      <% end %>
+      <div class="row">
+        <div class="ml-4 col-md-4">
+          <p><%= urabeya.class_name %></p>
+        </div>
+        <div class="ml-2 mb-2 col-md-6" style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
+          <%= Rinku.auto_link(urabeya.class_url, :all, 'target="_blank"').html_safe %>
+        </div>
+      </div>
+      
+      <div>   
+        <% if admin_signed_in? %>
+          <%= urabeya.number %>
+            <%= link_to "削除", urabeya_path(urabeya.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>
+            <%= link_to "編集", edit_urabeya_path(urabeya.id) %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
 </div>
