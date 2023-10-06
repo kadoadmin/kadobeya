@@ -1,5 +1,4 @@
-<div class="container pt-4">
-  <h1>裏部屋</h1>
+<div class="container pt-4" style="padding-bottom: 100px;">
     <p>こちらには先生方から頂いた講義動画を載せています。有効に活用しましょう。</p>
     <% if admin_signed_in? %>
       <%= link_to "追加", new_urabeya_path(@urabeya.id) %>
@@ -12,11 +11,11 @@
         </div>
       <% else %>
       <% end %>
-      <div class="row">
-        <div class="ml-4 col-md-4">
-          <p><%= urabeya.class_name %></p>
+      <div class="row mt-1">
+        <div class="ml-4 col-md-4" style="height: 20px;">
+          <p class="text-nowrap"><%= urabeya.class_name %></p>
         </div>
-        <div class="ml-2 mb-2 col-md-6" style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
+        <div class="ml-4 mb-2 col-md-6" style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
           <%= Rinku.auto_link(urabeya.class_url, :all, 'target="_blank"').html_safe %>
         </div>
       </div>
