@@ -1,12 +1,20 @@
 <div class="bg01" style="height: 300px; width: 100%;">
-  <div style="height: 300px; width: 100%; background-color: rgba(250,250,250,0.3); padding-top: 90px; text-shadow: 0 0 10px rgba(0,0,0,1);">
+  <div style="height: 300px; width: 100%; background-color: rgba(225,225,225,0.4); padding-top: 90px; text-shadow: 0 0 10px rgba(0,0,0,1);">
     <div style="font-family: 'Noto Sans JP', sans-serif;"><p class="text-light text-center" style="font-size: 50px;">物理角部屋</h1></div>
-    <div style="font-family: 'Mv Boli', serif;"><p class="text-light text-center">Department of Physical Sciences, College of Science and Engineering, Ritsumeikan University</p></div>
+    <div class="float-left pt-4" style="transform: scale(-1, 1);">
+      <img src="/images/usaa.png" height="100px">
+    </div>
+    <div class="float-left pt-4">
+      <img src="/images/usaa.png" height="100px">
+    </div>
+    <div style="font-family: 'Mv Boli', serif;" class="d-flex justify-content-center">
+      <p class="text-light">Department of Physical Sciences, College of Science and Engineering, Ritsumeikan University</p>
+    </div>
   </div>
 </div>
 
-<div class="container">
-    <div class="row pt-5 mx-2 justify-content-center">
+<div class="container d-flex justify-content-center">
+    <div class="pt-5 mx-2">
       <p>常識にとらわれることなく、既存の枠を超えて進んできた立命館大学。<br>立命館大学理工学部
         物理科学科はこれからも自らの壁を超え、新たな未来を創ります。<br>このWEBサイトは
         物理科学科の学生なら誰でも使える"角部屋"というウエストウイング7階にある部屋の紹介ページです。<br>先輩に学び、後輩から学ぶことにより物理に対する知見を広げて世界に羽ばたきましょう。<br>
@@ -17,7 +25,7 @@
 <div class="container d-flex justify-content-center p-4" style="height: 100px;">
       <div class="mx-2">
         <%= link_to about_path do %>
-          <button type="button" class="btn btn-dark">about</button>
+          <button type="button" class="btn btn-dark">角部屋について</button>
         <% end %>
       </div>
       <div class="mx-2">

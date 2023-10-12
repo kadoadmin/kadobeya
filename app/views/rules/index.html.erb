@@ -1,8 +1,11 @@
 <div class="container pt-4"style="padding-bottom: 100px;">
   <h1>使い方・ルール</h1>
+    <% if admin_signed_in? %>
+      <%= link_to "追加", new_rule_path(@rule.id) %>
+    <% end %>
     <% @rules.each do |rule| %>
       <div class="m-3">
-        <h4><span style="background: linear-gradient(transparent 60%, #ffccec 0%); padding: 0 10px;"><%= rule.title %></span></h4>
+        <h4><span style="background: linear-gradient(transparent 60%, #ffdead 0%); padding: 0 10px;"><%= rule.title %></span></h4>
       </div>
       <div class="mx-5"><%= safe_join(rule.body.split("\n"),tag(:br)) %></div>
         
@@ -12,7 +15,4 @@
         <% end %>
     <% end %>
 
-    <% if admin_signed_in? %>
-      <%= link_to "追加", new_rule_path(@rule.id) %>
-    <% end %>
 </div>

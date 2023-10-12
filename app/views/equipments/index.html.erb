@@ -6,12 +6,12 @@
     <% end %>
   <div class="d-flex flex-wrap">
     <% @equipments.each do |equipment| %>
-      <div class="m-5">
+      <div class="m-4">
           <div>
           <%= image_tag equipment.get_image(200,200) %>
           </div>
           <div><h5><%= equipment.name %></h5></div>
-          <div><%= safe_join(equipment.detail.split("\n"),tag(:br)) %></div>
+          <div style="width: 270px;"><%= safe_join(equipment.detail.split("\n"),tag(:br)) %></div>
         
 
         <% if admin_signed_in? %>

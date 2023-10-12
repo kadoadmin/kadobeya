@@ -7,7 +7,7 @@
   <%= f.text_field :number %>
 
   <h4>書名</h4>
-  <%= f.text_field :title %>
+  <%= f.text_area :title %>
   
   <h4>著者名</h4>
   <%= f.text_field :author %>
@@ -19,7 +19,7 @@
   <%= f.text_field :date %>
   
   <h4>備考</h4>
-  <%= f.text_field :detail %>
+  <%= f.text_area :detail %>
   
   <%= f.submit 'Update' %>
   <%= link_to "Back", books_path %>

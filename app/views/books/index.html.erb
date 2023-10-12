@@ -5,7 +5,7 @@
       <%= link_to "追加", new_book_path(@book.id) %>
     <% end %>
   <div style="overflow-x: scroll;">
-    <table class="table" style="table-layout:fixed;">
+    <table class="table table-bordered" style="table-layout:fixed;">
       <tr style="background-color: rgba(211,211,211,0.5);">
         <th style="width: 160px;">分野</th>
         <th style="width: 100px;">整理番号</th>
@@ -14,8 +14,11 @@
         <th style="width: 100px;">出版社</th>
         <th style="width: 100px;">購入日</th>
         <th style="width: 200px;">備考</th>
-        <th style="width: 100px;"></th>
+        <% if admin_signed_in? %>
+          <th style="width: 100px;"></th>
+        <% end %>
       </tr>
+
 　  　<% @books.each do |book| %>
       <tr>
         <td><%= book.category %></td>
@@ -26,11 +29,12 @@
         <td><%= book.date %></td>
         <td><%= book.detail %></td>
         
-        <td><% if admin_signed_in? %>
-              <%= link_to "削除", book_path(book.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>
-              <%= link_to "編集", edit_book_path(book.id) %>
-            <% end %>
-        </td>
+        <% if admin_signed_in? %>
+          <td>
+            <%= link_to "削除", book_path(book.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>
+            <%= link_to "編集", edit_book_path(book.id) %>
+          </td>
+        <% end %>
       </tr>
       <% end %>
     </table>
